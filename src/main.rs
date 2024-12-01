@@ -22,6 +22,12 @@ async fn meow(ctx: Context<'_>) -> Result<(), Error> {
 }
 
 #[poise::command(slash_command, prefix_command)]
+async fn test(ctx: Context<'_>) -> Result<(), Error> {
+    ctx.say("Test!").await?;
+    Ok(())
+}
+
+#[poise::command(slash_command, prefix_command)]
 async fn echo(ctx: Context<'_>, #[rest] text: String) -> Result<(), Error> {
     ctx.say(text).await?;
     Ok(())
